@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<body class="bg-success">
+    <div class="container center-card">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body text-center">
+            <img src="https://ead.ifrn.edu.br/portal/wp-content/uploads/2019/03/IFRNLOGOSPARACAMPUSHORZ_VERT.4548350b756d404498b6.png" width="100%">
+            <h5 class="card-title mt-3">Bem vindo(a) ao SUAP</h5>
+            <p class="card-text mt-3"><a type="button" href="{{url_for('login')}}" class="btn btn-success">Entrar no seu SUAP</a></p>
+            <!-- Adicione aqui outros elementos do card, se desejar -->
+          </div>
+        </div>
+      </div>  
+</body>
+
+{% endblock %}

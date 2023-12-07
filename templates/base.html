@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SUAP: Sistema Unificado de Administração Pública</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+      .center-image {
+          height: 500px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+      }
+      .center-card {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+      }
+      .hidden {
+      display: none;
+      }
+  </style>
+  </head>
+        {% block content %} {% endblock %}
+      <script>
+          // Captura do botão e da imagem pelo ID
+          var toggleButton = document.getElementById('toggleButton');
+          var imageToToggle = document.getElementById('imageToToggle');
+        
+          // Adiciona um evento de clique ao botão
+          toggleButton.addEventListener('click', function() {
+            // Verifica se a imagem está visível ou oculta
+            if (imageToToggle.classList.contains('hidden')) {
+              // Se estiver oculta, torna visível
+              imageToToggle.classList.remove('hidden');
+              toggleButton.textContent = 'Ocultar Imagem';
+            } else {
+              // Se estiver visível, torna oculta
+              imageToToggle.classList.add('hidden');
+              toggleButton.textContent = 'Mostrar Imagem';
+            }
+          });
+      </script>    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

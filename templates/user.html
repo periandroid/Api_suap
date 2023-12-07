@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-success">
+        <div class="container-fluid">
+            <a class="navbar-brand text-light" href="#">SUAP - Perfil</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active text-light" aria-current="page" href="{{url_for('index')}}">Página Inicial</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="{{url_for('logout')}}">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row container p-5">
+            <div class="col-md-6">
+                <img class="rounded-3 img-fluid" id="imageToToggle" src="https://suap.ifrn.edu.br{{ user_data['url_foto_150x200'] }}" alt="foto">
+                <button class="btn btn-outline-dark mt-3" id="toggleButton">Ocultar Imagem</button>
+                <h3>{{ user_data['nome_usual'] }}</h3>
+                <table class="table table-striped">
+                    <tbody>
+                        {% for field in user_data %}
+                            <tr>
+                                <th scope="row">{{ field }}</th>
+                                <td>{{ user_data[field] }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-6">
+                <h4>Boletins de {{ user_data['nome_usual'] }}</h4>
+                <table class="table table-striped">
+                    <tbody>
+                        <tr>
+                            <td><a class="text-dark" href="{{ url_for('boletim', ano=2020) }}">Período 1</a></td>
+                            <td><a class="text-dark" href="{{ url_for('boletim', ano=2021) }}">Período 2</a></td>
+                            <td><a class="text-dark" href="{{ url_for('boletim', ano=2022) }}">Período 3</a></td>
+                            <td><a class="text-dark" href="{{ url_for('boletim', ano=2023) }}">Período 4</a></td>                        
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock %}
